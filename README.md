@@ -1,14 +1,17 @@
 # 🚑 Accident Severity Prediction using Machine Learning
 
-This project predicts the **severity of road accidents** (Slight, Serious, or Fatal) using real-world crash data. It applies multiple machine learning models and compares their performance to identify the most accurate classifier.
+This project predicts the **severity of road accidents** in the UK—classified as *Slight*, *Serious*, or *Fatal*—based on conditions like weather, light, road surface, and time. It explores the dataset using EDA, processes the data, and compares multiple machine learning models to identify the most accurate classifier.
 
-> ✅ Built as part of a team project. This version was prepared and published individually for portfolio and resume use.
+> ✅ This version was prepared and published individually for portfolio and resume purposes.
 
 ---
 
 ## 📂 Project Contents
 
-- `Accident_severity_prediction.ipynb` → Complete Colab notebook with data preprocessing, visualization, and model training
+- `Accident_severity_prediction.ipynb` — Colab notebook with:
+  - Exploratory Data Analysis (EDA)
+  - Data preprocessing
+  - ML model training and evaluation
 
 ---
 
@@ -20,64 +23,52 @@ This project predicts the **severity of road accidents** (Slight, Serious, or Fa
 - Speed limit  
 - Time of day  
 - Vehicle type  
-- Urban/rural indicator  
+- Urban/Rural indicator
 
 ---
 
-## ⚙️ ML Models Used
+## ⚙️ Machine Learning Models Used
 
 - **K-Nearest Neighbors (KNN)**
 - **Logistic Regression**
 - **Random Forest**
 - **Decision Tree**
 
-Each model was trained and evaluated using accuracy score, confusion matrix, and classification report.
+Each model is evaluated using:
+- Accuracy Score
+- Confusion Matrix
+- Classification Report
 
 ---
 
 ## 📈 Performance
 
-- Best performance achieved using **Random Forest**
-- Accuracy: **~82%**
-- Evaluation metrics include:
-  - Confusion matrix
-  - Accuracy score
-  - Classification report
+- **Best Model:** Random Forest  
+- **Accuracy:** ~82%  
+- Models were tuned using default hyperparameters for quick comparison.
 
 ---
 
 ## 🧠 Dataset
 
-- Source: UK road accident dataset  
-- Preprocessing included:
+- Source: [UK Road Safety - Kaggle](https://www.kaggle.com/datasets/saurabhshahane/uk-road-safety-accidents-and-vehicles)
+- File used: `Accidents_UK.csv`
+- Preprocessing includes:
   - Handling missing values
   - Label encoding
   - Feature selection
 
 ---
 
-## 🛠 Tools and Libraries
+## 🧪 How to Run the Notebook in Google Colab
 
-- Python
-- Pandas, NumPy
-- Scikit-learn
-- Matplotlib, Seaborn
-- Google Colab
+1. Click **Open in Colab** (or open the `.ipynb` manually in Colab)
+2. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/saurabhshahane/uk-road-safety-accidents-and-vehicles)
+3. In Colab, upload the dataset using:
+   ```python
+   from google.colab import files
+   uploaded = files.upload()
 
----
-
-## 👤 Author
-
-This version was created and published by [Your Name](https://github.com/yourusername) for personal portfolio use.  
-Original work was completed as part of a team-based academic project.
-
----
-
-## 📌 How to Use
-
-1. Open the notebook in [Google Colab](https://colab.research.google.com)
-2. Upload the dataset `Accidents_UK.csv`
-3. Run all cells to:
-   - Explore data
-   - Train models
-   - View predictions and evaluation metrics
+   import pandas as pd
+   import io
+   df = pd.read_csv(io.BytesIO(next(iter(uploaded.values()))))
